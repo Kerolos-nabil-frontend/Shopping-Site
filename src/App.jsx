@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import Home from './components/Home/Home'
 import Products from './components/Products/Products'
@@ -25,7 +25,7 @@ export default function App() {
 
   const queryClient = new QueryClient()
 
-let routes= createBrowserRouter([
+let routes= createHashRouter([
   {path:"",element:<Layout/>, children:[
     {index:true, element:<Home/>},
     {path:"cart", element:<Cart/>},
